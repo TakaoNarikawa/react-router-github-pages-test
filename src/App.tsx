@@ -37,11 +37,14 @@ function Routes() {
 
 function App() {
   return (
-    <Router>
-      <ContentWrapper className="site-layout">
-        <Routes />
-      </ContentWrapper>
-    </Router>
+    <>
+      react-router-github-pages-test
+      <Router>
+        <ContentWrapper className="site-layout">
+          <Routes />
+        </ContentWrapper>
+      </Router>
+    </>
   );
 }
 
