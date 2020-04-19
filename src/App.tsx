@@ -15,23 +15,33 @@ const PagePadding = styled.div`
   padding: ${X_LARGE} 0px;
 `;
 
+export const PATH_PREFIX = "/react-router-github-pages-test";
+
 function Routes() {
-  const { pathname } = useLocation();
+  const location = useLocation();
+  const pathname = location?.pathname;
   useEffect(() => window.scrollTo(0, 0), [pathname]);
   return (
-    <Switch>
+    <>
+      <div>pathname:{pathname}</div>
       {pages.map(({ path, noPadding, View }, i) => (
-        <Route key={i} exact path={path}>
-          {noPadding ? (
-            <View />
-          ) : (
-            <PagePadding>
-              <View />
-            </PagePadding>
-          )}
-        </Route>
+        <div>{PATH_PREFIX + path}</div>
       ))}
-    </Switch>
+
+      <Switch>
+        {pages.map(({ path, noPadding, View }, i) => (
+          <Route key={i} exact path={PATH_PREFIX + path}>
+            {noPadding ? (
+              <View />
+            ) : (
+              <PagePadding>
+                <View />
+              </PagePadding>
+            )}
+          </Route>
+        ))}
+      </Switch>
+    </>
   );
 }
 
