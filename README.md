@@ -1,5 +1,24 @@
 # `react-router-dom` + `github-pages`
 
+## Install
+
+```
+yarn add react-router-dom
+yarn add --dev gh-pages
+```
+
+## Build
+
+```
+yarn react-scripts build
+```
+
+## Deploy
+
+```
+yarn gh-pages -d build
+```
+
 ```
 {
   path: "/",
