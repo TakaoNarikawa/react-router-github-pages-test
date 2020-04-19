@@ -1,6 +1,6 @@
 import { Layout } from "antd";
 import React, { useEffect } from "react";
-import { BrowserRouter as Router, Route, Switch, useLocation } from "react-router-dom";
+import { HashRouter as Router, Route, Switch, useLocation } from "react-router-dom";
 import pages from "src/Pages";
 import styled from "styled-components";
 import { BASE, FOOTER_HEIGHT, HEADER_HEIGHT, PAGE_SIDE_PADDING, X_LARGE } from "./utils/space";
@@ -15,8 +15,6 @@ const PagePadding = styled.div`
   padding: ${X_LARGE} 0px;
 `;
 
-export const PATH_PREFIX = "/react-router-github-pages-test";
-
 function Routes() {
   const location = useLocation();
   const pathname = location?.pathname;
@@ -25,12 +23,12 @@ function Routes() {
     <>
       <div>pathname:{pathname}</div>
       {pages.map(({ path, noPadding, View }, i) => (
-        <div>{PATH_PREFIX + path}</div>
+        <div>{path}</div>
       ))}
 
       <Switch>
         {pages.map(({ path, noPadding, View }, i) => (
-          <Route key={i} exact path={PATH_PREFIX + path}>
+          <Route key={i} exact path={path}>
             {noPadding ? (
               <View />
             ) : (
