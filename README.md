@@ -1,5 +1,9 @@
 # `react-router-dom` + `github-pages`
 
+## Tips
+
+We need to use `HashRouter` instead of `BrowserRouter`.
+
 ## Install
 
 ```
