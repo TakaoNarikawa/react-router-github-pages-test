@@ -1,4 +1,4 @@
-# `react-router-dom` + `github-pages`
+# react-router-dom + github-pages
 
 ## Tips
 
