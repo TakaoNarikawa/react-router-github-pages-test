@@ -6,7 +6,6 @@ import Page1 from "src/containers/Page1";
 type Page = {
   path: string;
   View: React.FC;
-  noPadding?: boolean;
 };
 
 const pages: Page[] = [
